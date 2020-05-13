@@ -10,7 +10,7 @@ var ficheAPI = require("./API/ficheAPI");
 
 //Routes API
 router.get("/", (request, response) => response.redirect("/API/categorie"));
-
+//test
 router.get("/API/categorie", categorieAPI.categorieList);
 router.post("/API/categorie/new", categorieAPI.categorieNew);
 router.get("/API/categorie/fiche/:idcategorie", ficheAPI.ficheList);
