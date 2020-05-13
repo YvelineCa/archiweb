@@ -1,0 +1,178 @@
+<html>
+    <head>
+        <title>Ecotips</title>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+            <% if(update) { %>
+                <h1><a href="/categorie">ECOTIPS</a></h1>
+                <p class="title">Modifier une catégorie</p>
+        
+                <form action="/categorie/new" method="POST">
+                    <p class="name">Nom de la catégorie</p>
+                    <input type="text" name="name" value="<%= cat[0].name %>" ><br>
+                    <input type="hidden" name="idcategorie" value="<%= cat[0].idcategorie %>" >
+                    <input type="submit" name="save" value="Sauver"><br>
+                </form>
+                <div class="back"><a href="/categorie">Retour aux catégories</a></div>
+            <% } %>
+        
+            <% if(!update) { %>
+                <h1><a href="/categorie">ECOTIPS</a></h1>
+                <p class="title">Ajouter une catégorie</p>
+            
+                <form action="/categorie/new" method="POST">
+                    <p class="name">Nom de la catégorie</p>
+                    <input type="text" name="name" value="<%= name %>" ><br>
+                    <input type="hidden" name="idcategorie" value="<%= idcategorie %>" >
+                    <input type="submit" name="save" value="Sauver"><br> 
+                </form>
+                <div class="back"><a href="/categorie">Retour aux catégories</a></div>
+            <% } %>
+    </body>
+</html>
+
+
+
+<style>
+
+/*Desktop*/
+body {
+        font-family: 'Playfair Display SC', serif;
+        text-align: center;
+}
+   
+h1{
+    color:#f6f2e0;
+    text-align: center;
+    padding: 80px;
+    margin: 0px;
+    background: #26463b;
+    font-size: 35px;
+    letter-spacing: 15px;
+}
+
+a{
+    text-decoration: none;
+    color: #f6f2e0;
+}
+
+.title {
+    text-decoration: none;
+    color:#f6f2e0;
+    text-align: center;
+    padding: 60px;
+    background: #466649; /* Green button */
+    font-size: 30px;
+    margin: 0px;
+}
+
+.name {
+    color: #26463b;
+    font-size:20px;
+    margin-top: 60px;
+}
+
+input[type=text] {
+    font-family: 'Playfair Display SC', serif;
+    color: #26463b; /* Green static */
+    box-sizing: border-box; 
+    font-size: 20px;
+    margin-bottom: 60px;
+}
+
+input[type=submit] {
+    font-family: 'Playfair Display SC', serif;
+    background-color: #466649; /* Green button */
+    border: none;
+    color: #f6f2e0;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 18px; 
+}
+
+.back {
+    background-color: #466649; /* Green button */
+    border: none;
+    color: #f6f2e0;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 15px 32px;
+    font-size: 18px; 
+    display: inline-block;
+}
+
+/* Tablet screen */
+@media only screen and (max-width: 1024px) {
+    h1{
+        padding: 60px;
+        font-size: 30px;
+    }
+
+    .title {
+        padding: 40px;
+        font-size: 25px;
+    }
+
+    .name {
+        font-size:19px;
+        margin-top: 60px;
+    }
+
+    input[type=text] {
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+
+    input[type=submit] {
+        margin-bottom: 10px;
+        padding: 13px;
+        font-size: 16px; 
+    }
+
+    .back {
+        margin-bottom: 10px;
+        padding: 12px 12px;
+        font-size: 16px; 
+    }
+}
+
+/*Mobile screen*/
+@media only screen and (max-width: 600px) {
+    h1{
+        padding: 40px;
+        font-size: 25px;
+    }
+
+    .title {
+        padding: 30px;
+        font-size: 20px;
+    }
+
+    .name {
+        font-size:18px;
+        margin-top: 60px;
+    }
+
+    input[type=text] {
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+
+    input[type=submit] {
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 15px; 
+    }
+
+    .back {
+        margin-bottom: 10px;
+        padding: 10px 10px;
+        font-size: 15px; 
+    }  
+}
+</style>

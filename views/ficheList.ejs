@@ -1,0 +1,297 @@
+<html>
+
+<head>
+  <title>Ecotips - Recettes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <h1><a href="/categorie">ECOTIPS</a></h1>
+  <div class="link"><a href="/fiche/add">Ajouter une recette</a></div>
+  <form class="filter" action="/fiche/filter" method="POST">
+    <input type="text" placeholder="Search" aria-label="Search" name="title" />
+    <button type="submit">
+      Search
+    </button>
+    <button type="submit">
+      Delete Filter
+    </button>
+  </form>
+  <ul class="box">
+    <% for (let i = 0 ; i < fiches.length ; i++) { %>
+    <li class="title">
+      <%= fiches[i].title %>
+    </li>
+    <div class="inside">
+      <li class="ingredients">
+        <%= fiches[i].ingredients %>
+      </li>
+      <li class="process">
+        <%= fiches[i].process %>
+      </li>
+    </div>
+    <li class="action">
+      <div class="modifier">
+        <a href="/fiche/update/<%= fiches[i].idfiche %>">Modifier</a>
+      </div>
+      <div class="delete">
+        <a href="/fiche/delete/<%= fiches[i].idfiche %>">Effacer</a>
+      </div>
+    </li>
+    <% } %>
+  </ul>
+  <div class="back"><a href="/categorie">Retour aux catégories</a></div>
+</body>
+
+</html>
+
+<style>
+  /*Desktop screen*/
+  body {
+    font-family: "Playfair Display SC", serif;
+    text-align: center;
+  }
+
+  h1 {
+    color: #f6f2e0;
+    text-align: center;
+    padding: 80px;
+    margin: 0px;
+    background: #26463b;
+    /* Green static */
+    font-size: 35px;
+    letter-spacing: 15px;
+  }
+
+  .link {
+    text-decoration: none;
+    color: #f6f2e0;
+    text-align: center;
+    padding: 60px;
+    background: #466649;
+    /* Green button */
+    font-size: 30px;
+  }
+
+  .link :visited {
+    color: #f6f2e0;
+    text-decoration: none;
+  }
+
+  .link :hover {
+    color: #26463b;
+    /* Green static */
+    text-decoration: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: #f6f2e0;
+  }
+
+  .box {
+    color: #f6f2e0;
+    text-align: center;
+    list-style-type: none;
+    margin: 50px;
+    padding: 0px;
+  }
+
+  .title {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 20px;
+    background: #26463b;
+    /* Green static */
+    font-size: 23px;
+  }
+
+  .title :visited {
+    color: #f6f2e0;
+    text-decoration: none;
+  }
+
+  .inside {
+    border-style: solid;
+    border-width: 5px;
+    color: #26463b;
+    /* Green static */
+    border-color: #26463b;
+    /* Green static */
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 10px;
+  }
+
+  .ingredients {
+    padding: 20px;
+  }
+
+  .process {
+    padding: 20px;
+  }
+
+  .action {
+    margin-top: 10px;
+  }
+
+  .modifier {
+    background-color: #466649;
+    /* Green button */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .delete {
+    background-color: #466649;
+    /* Green button */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .back {
+    margin-top: 30px;
+    padding: 15px;
+    background: #466649;
+    /* Green button */
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .back :visited {
+    color: #f6f2e0;
+    text-decoration: none;
+  }
+
+  /*Tablet screen*/
+  @media screen and (max-width: 1024px) {
+    h1 {
+      padding: 60px;
+      font-size: 30px;
+    }
+
+    .link {
+      padding: 40px;
+      font-size: 25px;
+    }
+
+    .box {
+      margin: 40px;
+    }
+
+    .title {
+      margin-top: 50px;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding: 20px;
+      font-size: 20px;
+    }
+
+    .inside {
+      border-width: 3px;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding: 8px;
+    }
+
+    .ingredients {
+      padding: 18px;
+    }
+
+    .process {
+      padding: 18px;
+    }
+
+    .action {
+      margin-top: 10px;
+    }
+
+    .modifier {
+      padding: 15px 32px;
+      font-size: 14;
+    }
+
+    .delete {
+      padding: 15px 32px;
+      font-size: 14;
+    }
+
+    .back {
+      margin-top: 30px;
+      padding: 13px;
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    h1 {
+      padding: 40px;
+      font-size: 25px;
+    }
+
+    .link {
+      padding: 30px;
+      font-size: 20px;
+    }
+
+    .box {
+      margin: 30px;
+    }
+
+    .title {
+      margin-top: 50px;
+      margin-left: 5px;
+      margin-right: 5px;
+      padding: 20px;
+      font-size: 18px;
+    }
+
+    .inside {
+      border-width: 3px;
+      margin-left: 5px;
+      margin-right: 5px;
+      padding: 6px;
+    }
+
+    .ingredients {
+      padding: 16px;
+    }
+
+    .process {
+      padding: 16px;
+    }
+
+    .action {
+      margin-top: 10px;
+    }
+
+    .modifier {
+      padding: 15px 32px;
+      font-size: 12px;
+    }
+
+    .delete {
+      padding: 15px 32px;
+      font-size: 12px;
+    }
+
+    .back {
+      margin-top: 25px;
+      padding: 10px;
+      font-size: 15px;
+    }
+  }
+</style>
