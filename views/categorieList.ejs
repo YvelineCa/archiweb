@@ -1,240 +1,245 @@
-<html>
-    <head>
-        <title>Ecotips - Catégories</title>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
+<html lang="fr">
 
-    <body>
-        <h1>ECOTIPS</h1>
-        <div class="link"><a href="/categorie/add">Ajouter une catégorie</a></div>
-        <ul class="box">
-            <% for (let i = 0 ;  i < categories.length ; i++) { %>
-            <li class="catname">
-                <%= categories[i].name %>
-            </li>
-            <li>
-                <div class="voir"><a href="/categorie/fiche/ <%= categories[i].idcategorie %>">Voir</a></div>
-            </li>
-            <li>
-                <div class="modifier"><a href="/categorie/update/<%= categories[i].idcategorie %>">Modifier</a></div>
-            </li>
-            <li>
-                <div class="delete"><a href="/categorie/delete/ <%= categories[i].idcategorie %>">Effacer</a></div>
-            </li> 
-            <% } %>
-        </ul>
-    </body>
+<head>
+    <title>Ecotips - Catégories</title>
+    <meta name="description" content="Un site internet proposant des conseils de recettes sur le zéro déchets!">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h1 role="banner">ECOTIPS</h1>
+    <div class="link"><a href="/categorie/add" tabindex="1">Ajouter une catégorie</a></div>
+    <ul class="box">
+        <% for (let i = 0 ;  i < categories.length ; i++) { %>
+        <li class="catname">
+            <%= categories[i].name %>
+        </li>
+        <li>
+            <div class="voir"><a href="/categorie/fiche/ <%= categories[i].idcategorie %>">Voir</a></div>
+        </li>
+        <li>
+            <div class="modifier"><a href="/categorie/update/<%= categories[i].idcategorie %>">Modifier</a>
+            </div>
+        </li>
+        <li>
+            <div class="delete"><a href="/categorie/delete/ <%= categories[i].idcategorie %>">Effacer</a>
+            </div>
+        </li>
+        <% } %>
+    </ul>
+</body>
+
 </html>
 
 <style>
-/*Desktop screen*/
-body {
-    font-family: 'Playfair Display SC', serif;
-}
+    /*Desktop screen*/
+    body {
+        font-family: 'Playfair Display SC', serif;
+    }
 
-h1{
-    color:#f6f2e0;
-    text-align: center;
-    padding: 80px;
-    margin: 0px;
-    background: #26463b;
-    font-size: 35px;
-    letter-spacing: 15px;
-}
+    h1 {
+        color: #f6f2e0;
+        text-align: center;
+        padding: 80px;
+        margin: 0px;
+        background: #26463b;
+        font-size: 35px;
+        letter-spacing: 15px;
+    }
 
-a{
-    text-decoration: none;
-    color: #f6f2e0;
-}
+    a {
+        text-decoration: none;
+        color: #f6f2e0;
+    }
 
-.link {
-    text-decoration: none;
-    color:#f6f2e0;
-    text-align: center;
-    padding: 60px;
-    background: #466649;
-    font-size: 30px;
-}
-
-.link :visited{
-    color: #f6f2e0;
-    text-decoration: none;
-}
-
-.link :hover{
-    color: #26463b;
-    text-decoration: none;
-}
-
-.box {
-    color:#f6f2e0;
-    text-align: center;
-    list-style-type: none;
-    margin: 50px;
-    padding: 0px;
-}
-
-.catname {
-    margin-top: 50px;
-    margin-left: 100px;
-    margin-right: 100px;
-    padding: 20px;
-    background: #26463b;
-    font-size: 23px;
-}
-
-.catname :visited{
-    color: #f6f2e0;
-    text-decoration: none;
-}
-
-.voir {
-    color:#f6f2e0;
-    margin-left: 100px;
-    margin-right: 100px;
-    padding-top: 15px;
-    padding-bottom: 7px;
-    background: #466649;
-}
-
-.voir :visited{
-    color: #f6f2e0;
-    text-decoration: none;
-}
-
-.voir :hover{
-    color: #26463b;
-    text-decoration: none;
-}
-
-.modifier {
-    color:#f6f2e0;
-    margin-left: 100px;
-    margin-right: 100px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    background: #466649;
-}
-
-.modifier :visited{
-    color: #f6f2e0;
-    text-decoration: none;
-}
-
-.modifier :hover{
-    color: #26463b;
-    text-decoration: none;
-}
-
-.delete {
-    color:#f6f2e0;
-    margin-left: 100px;
-    margin-right: 100px;
-    padding-top: 7px;
-    padding-bottom: 15px;
-    background: #466649;
-}
-
-.delete :visited{
-    color: #f6f2e0;
-    text-decoration: none;
-}
-
-.delete :hover{
-    color: #26463b;
-    text-decoration: none;
-}
-
-/*Tablet screen*/
-@media screen and (max-width: 1024px) {
-    h1{
+    .link {
+        text-decoration: none;
+        color: #f6f2e0;
+        text-align: center;
         padding: 60px;
+        background: #466649;
         font-size: 30px;
     }
 
-    .link {
-        padding: 40px;
-        font-size: 25px;
+    .link :visited {
+        color: #f6f2e0;
+        text-decoration: none;
+    }
+
+    .link :hover {
+        color: #26463b;
+        text-decoration: none;
     }
 
     .box {
-        margin: 40px;
+        color: #f6f2e0;
+        text-align: center;
+        list-style-type: none;
+        margin: 50px;
+        padding: 0px;
     }
 
     .catname {
         margin-top: 50px;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 100px;
+        margin-right: 100px;
         padding: 20px;
-        font-size: 20px;
+        background: #26463b;
+        font-size: 23px;
+    }
+
+    .catname :visited {
+        color: #f6f2e0;
+        text-decoration: none;
     }
 
     .voir {
-        margin-left: 20px;
-        margin-right: 20px;
+        color: #f6f2e0;
+        margin-left: 100px;
+        margin-right: 100px;
         padding-top: 15px;
         padding-bottom: 7px;
+        background: #466649;
+    }
+
+    .voir :visited {
+        color: #f6f2e0;
+        text-decoration: none;
+    }
+
+    .voir :hover {
+        color: #26463b;
+        text-decoration: none;
     }
 
     .modifier {
-        margin-left: 20px;
-        margin-right: 20px;
+        color: #f6f2e0;
+        margin-left: 100px;
+        margin-right: 100px;
         padding-top: 7px;
         padding-bottom: 7px;
+        background: #466649;
+    }
+
+    .modifier :visited {
+        color: #f6f2e0;
+        text-decoration: none;
+    }
+
+    .modifier :hover {
+        color: #26463b;
+        text-decoration: none;
     }
 
     .delete {
-        margin-left: 20px;
-        margin-right: 20px;
+        color: #f6f2e0;
+        margin-left: 100px;
+        margin-right: 100px;
         padding-top: 7px;
         padding-bottom: 15px;
-    }
-}
-
-/*Mobile screen*/
-@media screen and (max-width: 600px) {
-    h1{
-        padding: 40px;
-        font-size: 25px;
+        background: #466649;
     }
 
-    .link {
-        padding: 30px;
-        font-size: 20px;
+    .delete :visited {
+        color: #f6f2e0;
+        text-decoration: none;
     }
 
-    .box {
-        margin: 30px;
+    .delete :hover {
+        color: #26463b;
+        text-decoration: none;
     }
 
-    .catname {
-        margin-top: 50px;
-        margin-left: 5px;
-        margin-right: 5px;
-        padding: 20px;
-        font-size: 18px;
+    /*Tablet screen*/
+    @media screen and (max-width: 1024px) {
+        h1 {
+            padding: 60px;
+            font-size: 30px;
+        }
+
+        .link {
+            padding: 40px;
+            font-size: 25px;
+        }
+
+        .box {
+            margin: 40px;
+        }
+
+        .catname {
+            margin-top: 50px;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        .voir {
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-top: 15px;
+            padding-bottom: 7px;
+        }
+
+        .modifier {
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+        .delete {
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-top: 7px;
+            padding-bottom: 15px;
+        }
     }
 
-    .voir {
-        margin-left: 5px;
-        margin-right: 5px;
-        padding-top: 15px;
-        padding-bottom: 7px;
-    }
+    /*Mobile screen*/
+    @media screen and (max-width: 600px) {
+        h1 {
+            padding: 40px;
+            font-size: 25px;
+        }
 
-    .modifier {
-        margin-left: 5px;
-        margin-right: 5px;
-        padding-top: 7px;
-        padding-bottom: 7px;
-    }
+        .link {
+            padding: 30px;
+            font-size: 20px;
+        }
 
-    .delete {
-        margin-left: 5px;
-        margin-right: 5px;
-        padding-top: 7px;
-        padding-bottom: 15px;
+        .box {
+            margin: 30px;
+        }
+
+        .catname {
+            margin-top: 50px;
+            margin-left: 5px;
+            margin-right: 5px;
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        .voir {
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-top: 15px;
+            padding-bottom: 7px;
+        }
+
+        .modifier {
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+        .delete {
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-top: 7px;
+            padding-bottom: 15px;
+        }
     }
-}
 </style>
