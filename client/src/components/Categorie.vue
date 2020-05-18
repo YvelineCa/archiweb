@@ -14,7 +14,6 @@
         </div>
       </div>
     </div>
-    <!-- <router-link :to="{name: 'Fiche'}">Aller sur Fiche</router-link> -->
   </div>
 </template>
 
